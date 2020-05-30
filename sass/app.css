@@ -1,0 +1,225 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.7;
+  color: #777;
+  padding: 5rem; }
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem); }
+  80% {
+    transform: translateX(1rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem); }
+  80% {
+    transform: translateX(-1rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(5rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+.header__logo-box {
+  position: absolute;
+  top: 3.5rem;
+  left: 4rem; }
+
+.header__text-box, .header__btn-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+
+.header__btn-box {
+  margin-top: 17rem; }
+
+.row {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap; }
+
+.row::after {
+  display: table;
+  clear: both; }
+
+.col-1 {
+  width: 8.33%; }
+
+.col-2 {
+  width: 16.66%; }
+
+.col-3 {
+  width: 25%; }
+
+.col-4 {
+  width: 33.33%; }
+
+.col-5 {
+  width: 41.66%; }
+
+.col-6 {
+  width: 50%; }
+
+.col-7 {
+  width: 58.33%; }
+
+.col-8 {
+  width: 66.66%; }
+
+.col-9 {
+  width: 75%; }
+
+.col-10 {
+  width: 83.33%; }
+
+.col-11 {
+  width: 91.66%; }
+
+.col-12 {
+  width: 100%; }
+
+.cards-row {
+  max-width: 114rem;
+  margin: 0 auto; }
+  .cards-row:not(:last-child) {
+    margin-bottom: 8rem; }
+  .cards-row::after {
+    content: "";
+    display: table;
+    clear: both; }
+
+[class^="card-"] {
+  float: left; }
+  [class^="card-"]:not(:last-child) {
+    margin-right: 6rem; }
+
+.card-1-of-2 {
+  width: calc((100% - 6rem) / 2 ); }
+
+.card-1-of-3 {
+  width: calc((100% - 2 * 6rem) / 3 ); }
+
+.card-1-of-4 {
+  width: calc((100% - 3 * 6rem) / 4 ); }
+
+.card-2-of-3 {
+  width: calc( ( 2 * (100% - 2 * 6rem) ) / 3 + 6rem ); }
+
+.card-3-of-4 {
+  width: calc( ( 3 * (100% - 3 * 6rem) ) / 4 + 2 * 6rem); }
+
+.cards-primary-text, .cards-paragraph {
+  font-size: 1.6rem;
+  font-weight: 400;
+  text-transform: uppercase; }
+
+.header {
+  height: 95vh;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 131, 0.8)), url("../img/mont-royal-hd.jpg");
+  background-size: cover;
+  background-position: center;
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  position: relative;
+  text-align: center; }
+  .header-primary-title, .header-sub-title {
+    color: #fff;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 4rem;
+    text-transform: uppercase;
+    animation-name: moveInLeft;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
+    backface-visibility: hidden; }
+  .header-sub-title {
+    font-size: 2.9rem;
+    letter-spacing: 2.3rem;
+    position: absolute;
+    left: 0.7rem;
+    animation-name: moveInRight; }
+
+.section {
+  background-color: #f7f7f7;
+  padding: 20rem 0;
+  margin-top: -20vh; }
+  .section-text {
+    text-align: center;
+    margin-bottom: 8rem; }
+  .section-primary-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: inline-block;
+    background-image: linear-gradient(to right, rgba(126, 213, 111, 0.8), rgba(40, 180, 131, 0.8));
+    -webkit-background-clip: text;
+    color: transparent;
+    letter-spacing: 0.2rem;
+    transition: all 0.2s; }
+    .section-primary-title:hover {
+      transform: skewY(2deg) skewX(15deg);
+      text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2); }
+
+.header__main-logo {
+  width: 150px; }
+
+.btn {
+  font-size: 2rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-block;
+  padding: 1.5rem 4rem;
+  border-radius: 10rem;
+  position: relative;
+  transition: all 0.2s; }
+  .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+    .btn:hover::after {
+      transform: scaleX(1.2) scaleY(1.4);
+      opacity: 0; }
+  .btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+  .btn::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s; }
+
+.btn-white {
+  color: #777;
+  background-color: #fff; }
+  .btn-white::after {
+    background-color: #fff; }
+
+.btn-animated {
+  animation: moveInBottom 0.4s ease-out 0.75s;
+  animation-fill-mode: backwards; }
+
+/*# sourceMappingURL=app.css.map */

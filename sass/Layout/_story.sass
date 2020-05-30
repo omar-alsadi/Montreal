@@ -1,0 +1,72 @@
+.story
+  padding: 8rem
+  background-color: rgba($white-color , .5)
+  width: 75%
+  margin: 0 auto
+  box-shadow: 0 1.5rem 3rem rgba(0, 0 , 0 , .3)
+  border-radius: 3px
+  padding-left: 12rem
+  transform: skewX(-12deg)
+  position: relative
+  @include respond(tab-port)
+    width: 100%
+    padding: 6rem
+  @include respond(phone)
+    width: 100%
+    padding: 4rem
+    transform: skewX(0)
+  &-row
+    max-width: $cards-width
+    margin: 0 auto
+    @include respond(tab-port)
+      max-width: 55rem
+    @include respond(phone)
+      max-width: 55rem
+    &:not(:last-child)
+      margin-bottom: $gutter-vertical
+      @include respond(tab-port)
+        margin-bottom: $gutter-vertical-small
+      @include respond(tab-port)
+        margin-bottom: $gutter-vertical-xs
+    &::after
+      content: ""
+      display: table
+      clear: both
+  &_shape
+    width: 15rem
+    height: 15rem
+    float: left
+    shape-outside: circle(50% at 50% 50%)
+    -webkit-shape-outside: circle(50% at 50% 50%)
+    clip-path: circle(50% at 50% 50%)
+    -webkit-clip-path: circle(50% at 50% 50%)
+    transform: translateX(-4rem) translateY(-2rem) skewX(11deg)
+    transition: scale .5s
+    @include respond(phone)
+      width: 12rem
+      transform: translateX(-4rem) translateY(-2rem) skewX(0)
+      margin-left: 4rem
+  &_image
+    width: 100%
+    transform: scale(1.2)
+    transition: all .5s
+    backface-visibility: hidden
+  &:hover &_image
+      transform: scale(1)
+      filter: blur(3px) brightness(80%)
+  &_caption
+    font-size: 2.5rem
+    text-align: center
+    text-transform: uppercase
+    color: $white-color
+    position: absolute
+    top: 50%
+    left: 50%
+    font-size: 2.5rem
+    transition: all .5s
+    transform: translate(-50%, 20%)
+    opacity: 0
+    backface-visibility: hidden
+  &:hover &_caption
+    transform: translate(-50% , -50%)
+    opacity: 1

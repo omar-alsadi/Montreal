@@ -1,0 +1,91 @@
+.section
+  background-color: $grey-light
+  padding: 20rem 0
+  margin-top: -20vh
+  @include respond(tab-land)
+    padding: 20rem 2rem
+  @include respond(tab-port)
+    padding: 45rem 0
+    margin-top: -45vh
+  &-text
+    text-align: center
+    margin-bottom: 8rem
+  &-primary-title
+    font-size: 3.5rem
+    font-weight: 700
+    text-transform: uppercase
+    display: inline-block
+    background-image: linear-gradient( to right , $gr-light , $gr-dark )
+    -webkit-background-clip: text
+    color: transparent
+    letter-spacing: .2rem
+    transition: all .2s
+    @include respond(tab-port)
+      font-size: 3rem
+    @include respond(phone)
+      font-size: 2.5rem
+    &:hover
+      transform: skewY(2deg) skewX(15deg)
+      text-shadow: .5rem 1rem 2rem rgba(0,0,0,.2)
+  &-events
+    @extend .section
+    margin-top: -17vh
+    padding: 25rem 0
+  &_btn-box
+    position: absolute
+    margin-top: 5rem
+    left: 50%
+    transform: translate(-50%)
+  &_stories
+    padding: 20rem 0 3rem 0
+    margin-top: -10vh
+    position: relative
+    @media (max-width:970px)
+      padding: 14.5rem 0 3rem 0
+    @include respond(tab-port)
+      padding: 18.5rem 0 0 0
+    @include respond(phone)
+      padding: 14.5rem 0 0 0
+  &_book
+    padding: 20rem 0
+    background-image: linear-gradient( to right bottom , rgba(126, 213, 111, 1) , rgba(40, 180, 131, 1))
+    margin-top: -.8rem
+
+
+.section-features
+  padding: 20rem 0
+  background-image: linear-gradient( to right bottom , $gr-light , $gr-dark ) , url("../img/vieux-old-montreal.jpg")
+  background-size: cover
+  background-position: center
+  transform: skewY(-7deg)
+  margin-top: -8rem
+  & > *
+    transform: skewY(7deg)
+  @include respond(tab-land)
+    padding: 20rem 1rem
+  @include respond(tab-port)
+    padding: 10rem 1rem
+  &_box
+    background-color: rgba($white-color , .8)
+    text-align: center
+    padding: 2.5rem
+    font-size: 1.5rem
+    border-radius: 3px
+    box-shadow: 0 1.5rem 4rem rgba($black-blur , .15)
+    transition: transform .4s
+    @media (max-width:1150px)
+      height: 40rem
+    @media (max-width:975px)
+      height: 45rem
+    @include respond(tab-port)
+      height: auto
+    &:hover
+      transform: scale(1.05)
+      box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, .5)
+  &_icon
+    font-size: 6rem
+    margin-bottom: .5rem
+    display: inline-block
+    background-image: linear-gradient(to right , $gr-light , $gr-dark)
+    color: transparent
+    -webkit-background-clip: text

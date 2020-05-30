@@ -1,0 +1,48 @@
+.header
+  height: 95vh
+  background-image: linear-gradient( to right bottom , $gr-light , $gr-dark ) , url("../img/mont-royal-hd.jpg")
+  background-size: cover
+  background-position: center
+  clip-path: polygon(0 0, 100% 0,100% 80vh, 0 100%)
+  -webkit-clip-path: polygon(0 0, 100% 0,100% 80vh, 0 100%)
+  position: relative
+  text-align: center
+  @supports (-moz-appearance:none)
+    height: 90vh
+  @include respond(tab-port)
+    clip-path: polygon(0 0, 100% 0,100% 85vh, 0 100%)
+    -webkit-clip-path: polygon(0 0, 100% 0,100% 85vh, 0 100%)
+  @include respond(phone)
+    clip-path: polygon(0 0, 100% 0,100% 90vh, 0 100%)
+    -webkit-clip-path: polygon(0 0, 100% 0,100% 90vh, 0 100%)
+  &-primary-title
+    color: #fff
+    font-size: 6rem
+    font-weight: 400
+    letter-spacing: 4rem
+    text-transform: uppercase
+    animation-name: moveInLeft
+    animation-duration: 2s
+    animation-timing-function: ease-out
+    backface-visibility: hidden
+    @include respond(tab-port)
+      font-size: 5rem
+      letter-spacing: 3rem
+    @include respond(phone)
+      font-size: 3.5rem
+      letter-spacing: 2rem
+  &-sub-title
+    @extend .header-primary-title
+    font-size: 2.9rem
+    letter-spacing: 2.3rem
+    position: absolute
+    left: .7rem
+    animation-name: moveInRight
+    @include respond(tab-port)
+      font-size: 2.5rem
+      letter-spacing: 1.7rem
+    @include respond(phone)
+      font-size: 1.9rem
+      letter-spacing: 1rem
+
+  //  clip-path: (x y , x y , x y , x y) x from left to right / y from top to bottom

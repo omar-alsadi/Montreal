@@ -1,0 +1,130 @@
+.navigation
+  position: relative
+  &_checkbox
+    position: fixed
+    top: 6.5rem
+    right: 6.5rem
+    display: none
+  &_button
+    width: 7rem
+    height: 7rem
+    background-color: $white-color
+    border-radius: 50%
+    position: fixed
+    top: 7.5rem
+    right: 7.5rem
+    z-index: 200
+    box-shadow: 0 1rem 2rem rgba($black-blur, .2)
+    cursor: pointer
+    @include respond(tab-port)
+      top: 6.5rem
+      right: 6.5rem
+    @include respond(phone)
+      top: 6rem
+      right: 6rem
+  &_background
+    width: 6rem
+    height: 6rem
+    position: fixed
+    top: 8rem
+    right: 8rem
+    background-image: linear-gradient( to right bottom , rgb(126, 213, 111 ), rgb(40, 180, 131) )
+    border-radius: 50%
+    z-index: 100
+    transform: scale(0)
+    transition: transform .7s
+    @include respond(tab-port)
+      top: 7rem
+      right: 7rem
+    @include respond(phone)
+      top: 6rem
+      right: 6rem
+  &_nav
+    position: fixed
+    height: 100vh
+    width: 0%
+    top: 0
+    left: 0
+    z-index: 150
+    opacity: 0
+    transition: all .8s cubic-bezier(0.33, 1, 0.68, 1)
+    @include respond(tab-port)
+      visibility: hidden
+  &_list
+    list-style: none
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50% , -50%)
+    text-align: center
+    width: 100%
+  &_item
+    margin: 1rem
+    padding: 1rem
+  &_link
+    font-size: 3rem
+    font-weight: 300
+    text-decoration: none
+    padding: 1rem 2rem
+    color: $white-color
+    text-transform: uppercase
+    background-image: linear-gradient(120deg , transparent 0% , transparent 50% , $white-color 50%)
+    background-size: 230%
+    transition: all .4s
+    display: inline-block
+    &:hover
+      background-position: 100%
+      color: $color-primary
+      transform: translateX(1rem)
+  &_checkbox:checked ~ &_background
+    transform: scale(60)
+  &_checkbox:checked ~ &_nav
+    opacity: 1
+    width: 100%
+    @include respond(tab-port)
+      visibility: visible
+  &_icon
+    position: relative
+    top: 50%
+    left: 50%
+    transform: translate(-50% , -50%)
+    &,
+    &::after,
+    &::before
+      width: 3rem
+      height: 2px
+      background-color: #333
+      display: inline-block
+
+    &::after,
+    &::before
+      content: ""
+      position: absolute
+      left: 0
+      transition: all .2s
+
+    &::before
+      top: -.8rem
+
+    &::after
+      top: .8rem
+
+  &_button:hover &_icon::before
+    top: -1rem
+
+  &_button:hover &_icon::after
+    top: 1rem
+
+  &_checkbox:checked + &_button &_icon
+    background-color: transparent
+
+  &_checkbox:checked + &_button &_icon::before
+    top: 0
+    transform: rotate(-135deg)
+
+  &_checkbox:checked + &_button &_icon::after
+    top: 0
+    transform: rotate(135deg)
+
+
+//

@@ -1,0 +1,38 @@
+.footer
+  padding: 15rem
+  background-color: #333
+  @include respond(tab-port)
+    padding: 8rem 0
+    text-align: center
+  &_logo
+    width: 35rem
+    display: block
+    margin: 0 auto
+    @include respond(tab-port)
+      width: 25rem
+  &_navigation
+    list-style: none
+    border-top: 1px solid $grey-light
+    padding-top: 2rem
+    display: inline-block
+  &_list
+    font-size: 1.5rem
+    color: $white-color
+    display: inline-block
+    cursor: pointer
+    transition: all .2s
+    backface-visibility: hidden
+    &:not(:last-child)
+      padding-right: 2rem
+    &:hover
+      color: $color-primary
+      transform: scale(1.1)
+  &_about
+    font-size: 1.5rem
+    color: $white-color
+    border-top: 1px solid $grey-light
+    padding-top: 2.2rem
+    display: inline-block
+    float: right
+    @include respond(tab-port)
+      float: none

@@ -1,0 +1,190 @@
+.cards-row
+  max-width: $cards-width
+  margin: 0 auto
+  @include respond(tab-port)
+    max-width: 55rem
+  @include respond(phone)
+    max-width: 40rem
+  &:not(:last-child)
+    margin-bottom: $gutter-vertical
+    @include respond(tab-port)
+      margin-bottom: $gutter-vertical-small
+  &::after
+    content: ""
+    display: table
+    clear: both
+
+[class^="card-"]
+  float: left
+  @include respond(tab-port)
+    width: 100% !important
+  &:not(:last-child)
+    margin-right: $gutter-horizontal
+    @include respond(tab-port)
+      margin-right: 0
+      margin-bottom: $gutter-vertical-small
+
+
+.card-1-of-2
+  width: calc((100% - #{$gutter-horizontal}) / 2 )
+
+.card-1-of-3
+  width: calc((100% - 2 * #{$gutter-horizontal}) / 3 )
+
+.card-1-of-4
+  width: calc((100% - 3 * #{$gutter-horizontal}) / 4 )
+
+.card-2-of-3
+  width: calc( ( 2 * (100% - 2 * #{$gutter-horizontal}) ) / 3 + #{$gutter-horizontal} )
+
+.card-3-of-4
+  width: calc( ( 3 * (100% - 3 * #{$gutter-horizontal}) ) / 4 + 2 * #{$gutter-horizontal})
+
+.cards-primary-text
+  font-size: 1.6rem
+  font-weight: 700
+  text-transform: uppercase
+  margin-bottom: 1.5rem
+
+.cards-paragraph
+  font-size: 1.6rem
+  &:not(:last-child)
+    margin-bottom: 3rem
+
+
+.card
+  position: relative
+  perspective: 150rem
+  -moz-perspective: 150rem
+  height: 55rem
+  @include respond(tab-port)
+    height: auto
+    border-radius: 3px
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, .15)
+  &__side
+    transition: all .8s ease
+    width: 100%
+    height: 55rem
+    position: absolute
+    top: 0
+    left: 0
+    -webkit-backface-visibility: hidden
+    backface-visibility: hidden
+    border-radius: 3px
+    overflow: hidden
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, .15)
+    @include respond(tab-port)
+      height: auto
+      position: relative
+      box-shadow: none
+    &--front
+      background-color: $white-color
+    &--back
+      transform: rotateY(-180deg)
+      @include respond(tab-port)
+        transform: rotateY(0)
+        margin-top: -6rem
+        clip-path: polygon(0 15% , 100% 0 , 100% 100% , 0 100%)
+      &-1
+        background-image: linear-gradient(to right bottom , $yellow-light , $orange-dark)
+      &-2
+        background-image: linear-gradient(to right bottom , $gr-light , $gr-dark)
+      &-3
+        background-image: linear-gradient(to right bottom , $blue-light , $violet-dark)
+  &:hover &__side--front
+    transform: rotateY(180deg)
+    @include respond(tab-port)
+      transform: rotateY(0)
+  &:hover &__side--back
+    transform: rotateY(0)
+  &__image
+    background-position: center
+    background-size: cover
+    background-blend-mode: color
+    clip-path: polygon(0 0, 100% 0 , 100% 85%, 0 100%)
+    -webkit-clip-path: polygon(0 0, 100% 0 , 100% 85%, 0 100%)
+    height: 25rem
+    &-1
+      background-image: linear-gradient(to right bottom , $yellow-light , $orange-dark) , url('../img/Jazz-Festival.png')
+    &-2
+      background-image: linear-gradient(to right bottom , $gr-light , $gr-dark) , url('../img/cirque.jpg')
+    &-3
+      background-image: linear-gradient(to right bottom , $blue-light , $violet-dark) , url('../img/festival-of-colors.jpg')
+  &__heading
+    font-size: 2.5rem
+    font-weight: 300
+    text-align: right
+    color: $white-color
+    width: 75%
+    text-transform: uppercase
+    position: absolute
+    top: 18rem
+    right: 3rem
+    @include respond(tab-land)
+      font-size: 2.1rem
+    @include respond(tab-port)
+      font-size: 3rem
+  &__heading-span
+    padding: 1rem 2.5rem
+    box-decoration-break: clone
+    -webkit-box-decoration-break: clone
+    &-1
+      background-image: linear-gradient(to right bottom , rgba($yellow-light , .9) , rgba($orange-dark, .9))
+    &-2
+      background-image: linear-gradient(to right bottom , rgba($gr-light , .9) , rgba($gr-dark, .9))
+    &-3
+      background-image: linear-gradient(to right bottom , rgba($blue-light , .9) , rgba($violet-dark, .9))
+  &__details
+    padding: 4rem 0
+    @include respond(tab-port)
+      padding: 8rem 0
+    ul
+      list-style-type: none
+      text-align: center
+      li
+        width: 80%
+        margin: 0 auto
+        font-size: 1.5rem
+        padding: 1rem 0
+        text-transform: uppercase
+        &:not(:last-child)
+          border-bottom: 1px solid $grey-light
+
+.cta
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%,-50%)
+  width: 90%
+  color: $white-color
+  text-align: center
+  @include respond(tab-port)
+    position: relative
+    width: 100%
+    padding: 7rem 4rem
+    top: 0
+    left: 0
+    transform: translate(0)
+  &__price
+    top: -50%
+    right: -50%
+    font-size: 6rem
+    font-weight: 100
+    margin-bottom: 8rem
+    @include respond(tab-port)
+      font-size: 6rem
+      margin-bottom: 4rem
+    &-only
+      font-size: 1.4rem
+      text-transform: uppercase
+      @include respond(tab-port)
+        font-size: 1.8rem
+
+
+
+
+
+
+
+
+  //
